@@ -14,11 +14,11 @@ class customerlogin extends CI_Controller {
     {
         $this->load->library('form_validation');
         $this->load->helper('form');
-        $this->load->view('cust_login');
+        $this->load->view('customer');
     }
 
 
-    public function signin()
+    public function sign_in()
     {
         $this->load->library('form_validation');
         $this->load->helper('form');
@@ -46,7 +46,7 @@ class customerlogin extends CI_Controller {
 
         if($result)
         {
-            $this->load->view('cust_login');
+            $this->load->view('customer');
 
         }
         else
@@ -58,3 +58,4 @@ class customerlogin extends CI_Controller {
     }
 
 }
+?>
