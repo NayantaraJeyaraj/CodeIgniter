@@ -8,30 +8,10 @@
  */
 class ordersModel extends CI_Model
 {
-    public function getAllOrdersForBreakfast()
+    public function getAllOrdersFor($meal)
     {
-        $this->db->select('*');
-        $this->db->where(array('meal '=>"breakfast",'orderPlacedTime', date("Y/m/d")));
-        $q = $this->db->get('orders');
-        $res = $q->result_array();
-        return $res;
-    }
-
-    public function getAllOrdersForLunch()
-    {
-        $this->db->select('*');
-        $this->db->where(array('meal '=>"lunch",'orderPlacedTime', date("Y/m/d")));
-        $q = $this->db->get('orders');
-        $res = $q->result_array();
-        return $res;
-    }
-
-    public function getAllOtherOrders()
-    {
-        $this->db->select('*');
-        $this->db->where(array('meal '=>"other",'orderPlacedTime', date("Y/m/d")));
-        $q = $this->db->get('orders');
-        $res = $q->result_array();
+        $query = $this->db->query("select * from orders where meal='".$meal."' and stat not like 'dispatched'");
+        $res = $query->result_array();
         return $res;
     }
 
@@ -46,6 +26,31 @@ class ordersModel extends CI_Model
         {
             return false;
         }
+    }
+
+    public function getOrderCountForMeal($meal)
+    {
+        $this->db->select('COUNT(*) AS num');
+        $this->db->group_by('meal');
+        $this->db->having("meal ='".$meal."'");
+        $q = $this->db->get('orders');
+        $res = $q->result_array();
+
+        foreach($res as $row)
+        {
+            return $row['num'];
+        }
+    }
+
+    public function dispatched($oid)
+    {
+        $data = array(
+            'stat' => "dispatched"
+        );
+
+        $this->db->where('oid', $oid);
+        $this->db->update('orders', $data);
+
     }
 
 }
