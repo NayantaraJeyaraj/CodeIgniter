@@ -35,6 +35,19 @@ class itemsModel extends CI_Model
         return $res[0];
     }
 
+    public function getItemForCart($item)
+    {
+       /* $this->db->select('name','price');
+        $this->db->where('itemId ',$item);
+        $query = $this->db->get('items');
+        $res = $query->result_array();*/
+       $query = $this ->db->get_where('items',array('itemId '=> $item));
+        return  $query;
+
+    }
+
+
+
     public function insertNewItem($data)
     {
         try

@@ -47,10 +47,13 @@ class customerlogin extends CI_Controller {
 
         if($result)
         {
-            $this->load->view('dashboard');
+            echo 'oops';
+            //$this->load->view('dashboard');
+           // return true;
         }
         else
         {
+            echo 'Invalid username or password';
             $this->load->view('customer');
             $this->form_validation->set_message('check_database', 'Invalid username or password');
             return false;
