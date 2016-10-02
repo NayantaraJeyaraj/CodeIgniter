@@ -7,7 +7,7 @@ class customerlogin extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('login');
+        $this->load->model('login_model');
     }
 
     public function index()
@@ -23,7 +23,7 @@ class customerlogin extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('form');
 
-        $this->form_validation->set_rules('email', 'email','valid_email|max_length[40]|required');
+        $this->form_validation->set_rules('username', 'username','max_length[40]|required');
         $this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]');
 
         if($this->form_validation->run() == FALSE)
@@ -32,26 +32,27 @@ class customerlogin extends CI_Controller {
         }
         else
         {
-            $email = $this->input->post('email');
-            $password = md5($this->input->post('password'));
-            $this->check_database($email, $password);
+            $username = $this->input->post('username');
+            //$password = md5($this->input->post('password'));
+            $password = $this->input->post('password');
+            $this->check_database($username, $password);
         }
 
     }
 
-    public function check_database($email, $password)
+    public function check_database($username, $password)
     {
-        $this->load->model('login');
-        $result = $this->login->signin($email, $password);
+        $this->load->model('login_model');
+        $result = $this->login_model->login($username, $password);
 
         if($result)
         {
-            $this->load->view('customer');
+            $this->load->view('dashboard');
 
         }
         else
         {
-            $this->load->view('cust_login');
+            $this->load->view('customer');
             $this->form_validation->set_message('check_database', 'Invalid username or password');
             return false;
         }
