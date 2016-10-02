@@ -20,7 +20,7 @@ Class login_model extends CI_Model
 
         if($query->num_rows() == 1)//if username and password exits then return result
         {
-            $session_data = array(
+            /*$session_data = array(
                 'id'    => $row->id,
                 'name'  => $row->name,
                 'email' => $row->username,
@@ -28,8 +28,9 @@ Class login_model extends CI_Model
                 //'type' => 'user',
             );
 
-            $this->set_session($session_data);
+            $this->set_session($session_data);*/
             return 'logged_in';
+            //echo 'logged_in';
         }
         else
         {

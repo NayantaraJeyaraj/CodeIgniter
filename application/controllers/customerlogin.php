@@ -43,12 +43,11 @@ class customerlogin extends CI_Controller {
     public function check_database($username, $password)
     {
         $this->load->model('login_model');
-        $result = $this->login_model->login($username, $password);
+        $result = $this->login_model->login($username,$password);
 
         if($result)
         {
             $this->load->view('dashboard');
-
         }
         else
         {
