@@ -47,11 +47,10 @@ foreach ($posts->result() as $post)
 
                         </div>
                         <div class="form-group">
-
-                        <div class="col-sm-2">
+                            <label>Item deliver time</label>
+                            <input class="form-control" placeholder="yyyy|mm|dd" name="time" type="datetime" value="" >
 
                         </div>
-                            </div>
                         <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
                         <a href="">Buy</a>
                        </fieldset>
