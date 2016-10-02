@@ -28,5 +28,6 @@ class menupageController extends CI_Controller {
         $this->load->helper('form');
         $this->data['posts'] = $this->itemsModel->getItemData($item);
     }
+    public function directTo
 
 }
