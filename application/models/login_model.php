@@ -10,17 +10,17 @@ Class login_model extends CI_Model
     public function login($username,$password)
     {
         $this->load->database();
-        $this->db->select('id,name,username,pw');//select id,email,password from  table users
+        $this->db->select('uid,name,username,pw');//select id,email,password from  table users
         $this->db->from('users');
-        $this->db->where('email', $username); //where username == fname attribute of table users AND
-        $this->db->where('password', $password);//where password == password attribute of table users
+        $this->db->where('username', $username); //where username == fname attribute of table users AND
+        $this->db->where('pw', $password);//where password == password attribute of table users
         $this->db->limit(1);
         $query = $this->db->get();//run the query
         $row = $query->row();
 
         if($query->num_rows() == 1)//if username and password exits then return result
         {
-            $session_data = array(
+            /*$session_data = array(
                 'id'    => $row->id,
                 'name'  => $row->name,
                 'email' => $row->username,
@@ -28,8 +28,9 @@ Class login_model extends CI_Model
                 //'type' => 'user',
             );
 
-            $this->set_session($session_data);
+            $this->set_session($session_data);*/
             return 'logged_in';
+            //echo 'logged_in';
         }
         else
         {
