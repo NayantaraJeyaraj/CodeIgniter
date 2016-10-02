@@ -12,9 +12,9 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sliit Cafeteria Food Ordering System</title>
-	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
-	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url("http://fonts.googleapis.com/css?family=Lobster")?>" rel='stylesheet' type='text/css'>
+	<link href="<?php echo base_url("http://fonts.googleapis.com/css?family=Belgrano")?>" rel='stylesheet' type='text/css'>
+	<link href="<?php echo base_url("assets/bootstrap/css/style.css")?>" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="wrapper">
