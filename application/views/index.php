@@ -14,7 +14,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 	<title>Sliit Cafeteria Food Ordering System</title>
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
-	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url('assets/css/styles.css')?>" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="wrapper">
@@ -33,11 +33,11 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 	</header>
 	<div class="bodyContainer">
 		<section>
-			<div><img src="images/headerPic.jpg" alt=""></div>
+			<div><img src="<?php echo base_url('assets/images/headerPic.jpg')?>" alt=""></div>
 		</section>
 		<section>
 			<article class="post">
-				<a href=""><h1>Type and scrambled it to make a type</h1><img src="images/pic1.jpg" alt=""></a>
+				<a href=""><h1>Type and scrambled it to make a type</h1><img src="<?php echo base_url('assets/images/headerPic.jpg')?>images/pic1.jpg" alt=""></a>
 				<p class="smallPost">
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
 				</p>
