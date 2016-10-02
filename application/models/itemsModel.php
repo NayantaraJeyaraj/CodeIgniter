@@ -25,4 +25,17 @@ class itemsModel extends CI_Model
         $res = $q->result_array();
         return $res[0];
     }
+
+    public function insertNewItem($data)
+    {
+        try
+        {
+            $this->db->insert('items', $data);
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }
+        catch (Exception $exception)
+        {
+            return false;
+        }
+    }
 }

@@ -35,4 +35,17 @@ class ordersModel extends CI_Model
         return $res;
     }
 
+    public function insertNewOrder($data)
+    {
+        try
+        {
+            $this->db->insert('orders', $data);
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }
+        catch (Exception $exception)
+        {
+            return false;
+        }
+    }
+
 }
