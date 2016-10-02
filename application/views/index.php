@@ -28,6 +28,20 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 		</nav>
 		<div class="clearfloat"></div>
 	</header>
+
+	<table>
+         <tr>
+          <td><strong>Post Id</strong></td>
+          <td><strong>Post Title</strong></td>
+        </tr>
+         <?php foreach($posts as $post){?>
+         <tr>
+             <td><?php echo $post->post_id;?></td>
+             <td><?php echo $post->post_title;?></td>
+          </tr>
+         <?php }?>
+       </table>
+	/*
 	<div class="bodyContainer">
 		<section>
 			<div><img src="assets/images/headerPic.jpg" alt=""></div>
@@ -85,6 +99,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 			<p class="readMore"><a href="">{ Read More! }</a></p>
 		</section>
 	</div>
+	*/
 	<div class="clearfloat"></div>
 	<footer>
 		<p>

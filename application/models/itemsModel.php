@@ -26,6 +26,15 @@ class itemsModel extends CI_Model
         return $res[0];
     }
 
+    public function getImageOf($item)
+    {
+        $this->db->select('imageLink');
+        $this->db->where('itemId ',$item);
+        $q = $this->db->get('items');
+        $res = $q->result_array();
+        return $res[0];
+    }
+
     public function insertNewItem($data)
     {
         try

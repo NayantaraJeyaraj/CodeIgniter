@@ -29,6 +29,11 @@ class login extends CI_Controller {
 
         }
 
+    public function displayimages($item)
+    {
+       $data['order'] = $this->model->getImageOf($oid);
+    }
+
     public function signin()
     {
         $this->load->library('form_validation');
