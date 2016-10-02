@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!doctype html>
 <!--
 Design by Free Responsive Templates
