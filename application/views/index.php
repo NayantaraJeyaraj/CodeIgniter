@@ -22,18 +22,15 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 		<div class="logo"><h1><a href="">Corn Food</a></h1></div>
 		<nav>
 			<ul id="navlist">
-				<li id="active"><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Shop</a></li>
-				<li><a href="#">Customers</a></li>
-				<li><a href="#">Contact</a></li>
+				<li id="active"><a href="#">Menu</a></li>
+				<li><a href="#">Login</a></li>
 			</ul>
 		</nav>
 		<div class="clearfloat"></div>
 	</header>
 	<div class="bodyContainer">
 		<section>
-			<div><img src="images/headerPic.jpg" alt=""></div>
+			<div><img src="assets/images/headerPic.jpg" alt=""></div>
 		</section>
 		<section>
 			<article class="post">

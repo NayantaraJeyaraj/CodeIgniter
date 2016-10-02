@@ -20,14 +20,15 @@ class login extends CI_Controller {
     }
 
     public function dashboard()
-        {
-
-            $this->load->helper('url');
-            $this->load->library('form_validation');
-            $this->load->helper('form');
-            $this->load->view('dashboard');
-
-        }
+    {
+    echo "test" ;
+    /*
+        $this->load->helper('url');
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        $this->load->view('dashboard');
+        */
+    }
 
     public function signin()
     {
