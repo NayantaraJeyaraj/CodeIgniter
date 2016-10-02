@@ -10,8 +10,8 @@ Class login extends CI_Model
     public function login($email,$password)
     {
         $this->load->database();
-        $this->db->select('id,name,email,password');//select id,email,password from  table users
-        $this->db->from('nurse');
+        $this->db->select('id,name,email,pw');//select id,email,password from  table users
+        $this->db->from('users');
         $this->db->where('email', $email); //where username == fname attribute of table users AND
         $this->db->where('password', $password);//where password == password attribute of table users
         $this->db->limit(1);
@@ -24,7 +24,7 @@ Class login extends CI_Model
                 'id'    => $row->id,
                 'name'  => $row->name,
                 'email' => $row->email,
-                'type' => 'nurse',
+                'type' => 'customer',
                 //'type' => 'user',
             );
 
