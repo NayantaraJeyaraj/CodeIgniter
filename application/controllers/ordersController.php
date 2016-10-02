@@ -60,4 +60,22 @@ class ordersController extends CI_Controller
         header("Location: ".base_url('index.php/ordersController/getOrders/'.$meal));
 
     }
+
+    public function viewOrder($oid)
+    {
+        $this->load->model('ordersModel');
+        $this->load->model('usersModel');
+
+        $orderCount['breakfastCount'] = $this->ordersModel->getOrderCountForMeal("breakfast");
+        $orderCount['lunchCount'] = $this->ordersModel->getOrderCountForMeal("lunch");
+        $orderCount['otherCount'] = $this->ordersModel->getOrderCountForMeal("other");
+
+        $this->load->model('ordersItemsModel');
+        $orderDetails['orderItems'] = $this->ordersItemsModel->getOrderItemsOf($oid);
+
+        $this->load->view('dashboard');
+        $this->load->view('ordersHeader',$orderCount);
+        $this->load->view('viewOrder',$orderDetails);
+
+    }
 }

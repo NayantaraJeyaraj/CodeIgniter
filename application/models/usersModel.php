@@ -12,6 +12,7 @@ class usersModel extends CI_Model
     {
         $query = $this->db->query("select name from users where uid=".$id);
         $res = $query->result_array();
-        return $res[0]['name'];
+        return $res[0
+        ]['name'];
     }
 }

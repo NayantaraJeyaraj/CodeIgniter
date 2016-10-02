@@ -3,7 +3,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <form class="form-horizontal" id="postVacancy" role="form" method="post" action="<?php echo base_url('index.php/vacancyManagement/deleteVacancies')?>">
-                    <h4>Breakfast Orders</h4>
+                    <h4>Order Id : <?php echo $$orderDetails[0]['oid']?></h4>
                     <br>
                     <table class="table" style="padding: 50px" id="vacancies">
                         <tr>
