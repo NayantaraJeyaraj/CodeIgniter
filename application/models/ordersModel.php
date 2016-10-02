@@ -15,6 +15,17 @@ class ordersModel extends CI_Model
         return $res;
     }
 
+    public function insertOrderItem($name,$price,$total)
+    {
+        $data = array ( 'meal' => $name,
+            'price' =>$total,
+        );
+
+
+        $result =$this->db->insert('orders',$data);
+        return $result;
+
+    }
     public function insertNewOrder($data)
     {
         try
