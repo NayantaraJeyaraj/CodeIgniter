@@ -8,6 +8,17 @@
  */
 class itemsModel extends CI_Model
 {
+
+     function __construct()
+      {
+         // Call the Model constructor
+         parent::__construct();
+      }
+      //we will use the select function
+      public function select()
+      {
+         return $this->db->get('items')->result();
+      }
     public function getAllItemsOfType($type)
     {
         $this->db->select('*');
@@ -26,13 +37,10 @@ class itemsModel extends CI_Model
         return $res[0];
     }
 
-    public function getImageOf($item)
+    public function getItemData()
     {
-        $this->db->select('imageLink');
-        $this->db->where('itemId ',$item);
-        $q = $this->db->get('items');
-        $res = $q->result_array();
-        return $res[0];
+        $query = $this->db->get('items');
+        return $query;
     }
 
     public function insertNewItem($data)

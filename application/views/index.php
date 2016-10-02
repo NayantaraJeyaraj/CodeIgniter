@@ -14,6 +14,9 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 	<title>Sliit Cafeteria Food Ordering System</title>
 	<link href="<?php echo base_url("http://fonts.googleapis.com/css?family=Lobster")?>" rel='stylesheet' type='text/css'>
 	<link href="<?php echo base_url("http://fonts.googleapis.com/css?family=Belgrano")?>" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="<?php echo base_url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")?>">
+	<script src="<?php echo base_url("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")?>"></script>
+    <script src="<?php echo base_url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")?>"></script>
 	<link href="<?php echo base_url("assets/bootstrap/css/style.css")?>" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -31,15 +34,19 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 
 	<table>
          <tr>
-          <td><strong>Post Id</strong></td>
-          <td><strong>Post Title</strong></td>
+
         </tr>
-         <?php foreach($posts as $post){?>
-         <tr>
-             <td><?php echo $post->post_id;?></td>
-             <td><?php echo $post->post_title;?></td>
-          </tr>
-         <?php }?>
+         <?php
+                  foreach ($products as $row)
+                  {
+                     ?><tr>
+                     <td><?php echo $row->itemId;?></td>
+                     <td><?php echo $row->name;?></td>
+                     <td><?php echo $row->price;?></td>
+                     <td><img src="<?php echo base_url("$row->imageLink;?>")?>"></td>
+                     </tr>
+                  <?php }
+                  ?>
        </table>
 	/*
 	<div class="bodyContainer">
@@ -47,65 +54,33 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 			<div><img src="assets/images/headerPic.jpg" alt=""></div>
 		</section>
 		<section>
-			<article class="post">
-				<a href=""><h1>Type and scrambled it to make a type</h1><img src="images/pic1.jpg" alt=""></a>
-				<p class="smallPost">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-				</p>
-				<p class="date"><span>Jun 30, 2012</span> <a href="">{ Continue! }</a></p>
-			</article>
-			<article class="post">
-				<a href=""><h1>Lorem Ipsum has been the industry's</h1><img src="images/pic2.jpg" alt=""></a>
-				<p class="smallPost">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-				</p>
-				<p class="date"><span>Jun 30, 2012</span> <a href="">{ Continue! }</a></p>
-			</article>
-			<article class="lastPost">
-				<a href=""><h1>The industry's standard dummy text</h1><img src="images/pic3.jpg" alt=""></a>
-				<p class="smallPost">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-				</p>
-				<p class="date"><span>Jun 30, 2012</span> <a href="">{ Continue! }</a></p>
-			</article>
-			<div class="clearfloat"></div>
-			<article class="post">
-				<a href=""><h1>With the release of Letraset sheets</h1><img src="images/pic4.jpg" alt=""></a>
-				<p class="smallPost">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-				</p>
-				<p class="date"><span>Jun 30, 2012</span> <a href="">{ Continue! }</a></p>
-			</article>
-			<article class="post">
-				<a href=""><h1>Desktop publishing software like</h1><img src="images/pic5.jpg" alt=""></a>
-				<p class="smallPost">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-				</p>
-				<p class="date"><span>Jun 30, 2012</span> <a href="">{ Continue! }</a></p>
-			</article>
-			<article class="lastPost">
-				<a href=""><h1>It has survived not only five centuries, but</h1><img src="images/pic6.jpg" alt=""></a>
-				<p class="smallPost">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-				</p>
-				<p class="date"><span>Jun 30, 2012</span> <a href="">{ Continue! }</a></p>
-			</article>
-		</section>
-		<section>
-			<h2>About</h2>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-			</p>
-			<p class="readMore"><a href="">{ Read More! }</a></p>
+		     <table>
+                 <tr>
+		          <td><strong>Item Number</strong></td>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Price</strong></td>
+                  <td><strong>Image</strong></td>
+                </tr>
+			<?php
+              foreach ($products as $row)
+              {?>
+              <tr>
+                 <td>
+
+                    <label id="name" name="name"><?php echo $row->name;?></label></td>
+
+                    <td><label id="price" name="price"><?php echo $row->price;?></label></td>
+                    <br>
+                    <td><a href=""><img src="<?php echo $row->imageLink;?>" alt=""></a></td>
+                   <td><button id="buybtn" value="Buy">Buy</button></td></tr>
+              <?php }?>
+
 		</section>
 	</div>
 	*/
 	<div class="clearfloat"></div>
 	<footer>
 		<p>
-			Copyright &copy; Your Company Name. All rights reserved. Designed by <a href="http://www.free-responsive-templates.com" title="free responsive templates">Free Responsive Templates</a>, Validation
-			<a class="footerLink" href="http://validator.w3.org/check/referer" title="This page validates as HTML5"><abbr title="HyperText Markup Language">HTML5</abbr></a> |
-			<a class="footerLink" href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS3</abbr></a>
 		</p>
 	</footer>
 </div>

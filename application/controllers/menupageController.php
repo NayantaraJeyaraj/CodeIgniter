@@ -8,6 +8,7 @@ class menupageController extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->library('session');
+        $this->load->database();
         $this->load->model('itemsModel');
     }
 
@@ -16,14 +17,16 @@ class menupageController extends CI_Controller {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->helper('form');
-        $this->load->view('index');
+        $this->load->model('itemsModel');
+        $data['products'] = $this->itemsModel->select();
+        $this->load->view('index',$data);
     }
-    public function getImageOf($item)
+    public function getItemData($item)
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->helper('form');
-        $data['image'] = $this->model->getImageOf($oid);
+        $this->data['posts'] = $this->itemsModel->getItemData($item);
     }
 
 }
